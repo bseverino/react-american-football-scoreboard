@@ -1,21 +1,20 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+import Timer from "./Timer";
 
-function App() {
+const App = props => {
   //TODO: STEP 2 - Establish your application's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
   const [home, setHome] = useState(0);
   const [away, setAway] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-  const [secondTens, setSecondTens] = useState(0);
-  const [minutes, setMinutes] = useState(5);
-  const [minuteTens, setMinuteTens] = useState(1);
+
   const [down, setDown] = useState(1);
   const [toGo, setToGo] = useState(4);
   const [ballOn, setBallOn] = useState(21);
   const [quarter, setQuarter] = useState(1);
+
   const homeName = "Lions";
   const awayName = "Tigers";
 
@@ -26,7 +25,7 @@ function App() {
       setAway(away + score);
     };
   };
-  
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -38,7 +37,7 @@ function App() {
 
             <div className="home__score">{home}</div>
           </div>
-          <div className="timer">{minuteTens}{minutes}:{secondTens}{seconds}</div>
+          <Timer />
           <div className="away">
             <h2 className="away__name">{awayName}</h2>
             <div className="away__score">{away}</div>
@@ -46,23 +45,23 @@ function App() {
         </div>
         {/* <BottomRow /> */}
         <div className="bottomRow">
-        <div className="down">
-          <h3 className="down__title">Down</h3>
-          <div className="down__value">{down}</div>
+          <div className="down">
+            <h3 className="down__title">Down</h3>
+            <div className="down__value">{down}</div>
+          </div>
+          <div className="toGo">
+            <h3 className="toGo__title">To Go</h3>
+            <div className="toGo__value">{toGo}</div>
+          </div>
+          <div className="ballOn">
+            <h3 className="ballOn__title">Ball on</h3>
+            <div className="ballOn__value">{ballOn}</div>
+          </div>
+          <div className="quarter">
+            <h3 className="quarter__title">Quarter</h3>
+            <div className="quarter__value">{quarter}</div>        
+          </div>       
         </div>
-        <div className="toGo">
-          <h3 className="toGo__title">To Go</h3>
-          <div className="toGo__value">{toGo}</div>
-        </div>
-        <div className="ballOn">
-          <h3 className="ballOn__title">Ball on</h3>
-          <div className="ballOn__value">{ballOn}</div>
-        </div>
-        <div className="quarter">
-          <h3 className="quarter__title">Quarter</h3>
-          <div className="quarter__value">{quarter}</div>        
-        </div>      
-      </div>
       </section>
       <section className="buttons">
         <div className="homeButtons">

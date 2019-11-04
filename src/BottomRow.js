@@ -7,6 +7,14 @@ const [toGo, setToGo] = useState(4);
 const [ballOn, setBallOn] = useState(21);
 const [quarter, setQuarter] = useState(1);
 
+const quarterChange = () => {
+  if (quarter === 4) {
+    setQuarter(1);
+  } else {
+    setQuarter(quarter + 1);
+  };
+}
+
   return (
     <div className="bottomRow">
       <div className="down">
