@@ -23,8 +23,8 @@ const [quarter, setQuarter] = useState(1);
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">{quarter}</div>
-      </div>
+        <div className="quarter__value">{quarter}</div>        
+      </div>      
     </div>
   );
 };
