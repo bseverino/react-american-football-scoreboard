@@ -7,24 +7,24 @@ import Timer from "./Timer";
 const App = props => {
   //TODO: STEP 2 - Establish your application's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
-  const [home, setHome] = useState(0);
-  const [away, setAway] = useState(0);
+  const [home, setHome] = useState(0),
+        [away, setAway] = useState(0),
 
-  const [down, setDown] = useState(1);
-  const [toGo, setToGo] = useState(4);
-  const [ballOn, setBallOn] = useState(21);
-  const [quarter, setQuarter] = useState(1);
+        [down, setDown] = useState(1),
+        [toGo, setToGo] = useState(4),
+        [ballOn, setBallOn] = useState(21),
+        [quarter, setQuarter] = useState(1),
 
-  const homeName = "Lions";
-  const awayName = "Tigers";
+        homeName = "Lions",
+        awayName = "Tigers",
 
-  const teamScore = (team, score) => {
-    if (team === homeName){
-      setHome(home + score);
-    } else {
-      setAway(away + score);
-    };
-  };
+        teamScore = (team, score) => {
+          if (team === homeName){
+            setHome(home + score);
+          } else {
+            setAway(away + score);
+          };
+        };
 
   return (
     <div className="container">
